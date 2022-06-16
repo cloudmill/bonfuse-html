@@ -91,3 +91,54 @@ picture {
 button {
   color: var(--color-black);
 }
+
+.no-transition * {
+
+  transition: none !important;
+
+}
+
+@keyframes loop1 {
+  0% { 
+    transform: translateY(80vh); 
+    transform-origin: center; 
+  }
+  25% { 
+    transform: translateY(40vh); 
+    transform-origin: center; 
+  }
+  50% {
+    transform: translateY(0); 
+    transform-origin: center; 
+  }
+  75% { 
+    transform: translateY(-40vh); 
+    transform-origin: center; 
+  }
+  100% { 
+    transform: translateY(-80vh); 
+    transform-origin: center; 
+  }
+}
+@keyframes loop2 {
+  0% { 
+    transform: translateY(-80vh); 
+    transform-origin: center; 
+  }
+  25% { 
+    transform: translateY(80vh); 
+    transform-origin: center; 
+  }
+  50% {
+    transform: translateY(40vh); 
+    transform-origin: center; 
+  }
+  75% { 
+    transform: translateY(0); 
+    transform-origin: center; 
+  }
+  100% { 
+    transform: translateY(-40vh); 
+    transform-origin: center; 
+  }
+}

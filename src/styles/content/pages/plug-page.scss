@@ -24,6 +24,12 @@
     display: flex;
     align-items: flex-end;
 
+    transition: 1s;
+    transform: translateY(-100%);
+    &.loaded {
+      transform: none;
+    }
+
     @media (max-width: $breakpoint-l) {
       width: getRem(160px);
       left: calc(50% - #{getRem(80px)});
@@ -92,6 +98,22 @@
       @media (max-width: ($breakpoint-m - 1px)) {
         width: getRem(160px);
       }
+
+      &.b1 {
+        @media (min-width: $breakpoint) {
+          animation: loop1 linear 10s infinite;
+        }
+      }
+      &.b2 {
+        opacity: 0;
+
+        &.start {
+          @media (min-width: $breakpoint) {
+            opacity: 1;
+            animation: loop1 linear 10s infinite;
+          }
+        }
+      }
     }
   }
 
@@ -109,6 +131,20 @@
   }
 
   &__top {
+
+    @media (min-width: $breakpoint) {
+      
+      transform: translateY(-100%);
+      opacity: 0;
+
+      transition: transform 1s $transition-func, opacity 1.2s;
+      // transition: 1s;
+
+      &.loaded {
+        transform: none;
+        opacity: 1;
+      }
+    }
 
     @media (max-width: ($breakpoint - 1px)) {
       margin-bottom: getRem(40px);
@@ -179,6 +215,20 @@
   &__bottom {
     display: flex;
     flex-wrap: wrap;
+
+    @media (min-width: $breakpoint) {
+      
+      transform: translateY(100%);
+      opacity: 0;
+
+      transition: transform 1s $transition-func, opacity 1.2s;
+      // transition: 1s;
+
+      &.loaded {
+        transform: none;
+        opacity: 1;
+      }
+    }
   }
 
   &__contact {
