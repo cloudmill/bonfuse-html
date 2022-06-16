@@ -1,0 +1,81 @@
+@mixin f-main($font-weight: 400) {
+  font-weight: $font-weight;
+  font-family: $ff-main;
+}
+
+@mixin fsl($font-size, $line-height: null) {
+  font-size: unquote('#{$font-size / $fs}rem');
+  @if $line-height {
+    line-height: $line-height / 100%;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder{
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::placeholder  {
+    @content;
+  }
+}
+
+@mixin scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin styled-scrollbar() {
+  scrollbar-width: getRem(4px);
+
+  &::-webkit-scrollbar {
+    width: getRem(4px);
+    background-color: var(--background-grey-extra-2);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--background-grey-extra-2);
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-black);
+  }
+}
+
+@mixin cropText($lineCount) {
+  display: -moz-box;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+  line-clamp: $lineCount;
+}
+
+@function getVw($px, $width) {
+  @return $px / $width * 1vw;
+}
+
+@function getRem($px) {
+  @return unquote('#{$px / $fs}rem');
+}
+
+@function getStatic($px, $width) {
+  $percent: $width / 19.2px;
+  @return $px * $percent;
+}

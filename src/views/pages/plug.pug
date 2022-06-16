@@ -1,0 +1,51 @@
+extends ../layouts/master
+
+block content
+  .plug-page
+    .plug-page__info-col
+
+      .plug-page__top
+
+        h1.plug-page__ttl Новый сайт будет #[br] в скором времени
+
+        .plug-page__top-row
+
+          button.button-clean.plug-page__top-button
+            |Прайс-лист
+            +download
+
+          button.button-clean.plug-page__top-button
+            |Презентация компании
+            +download
+
+      .plug-page__bottom
+        .plug-page__contact
+          .plug-page__contact-icon
+            +phone.phone-icon
+          .plug-page__contact-col
+            .plug-page__contact-txt Оптовые продажи
+            .plug-page__contact-bold +7 495 792-45-65
+          .plug-page__contact-col
+            .plug-page__contact-txt Розничные продажи
+            .plug-page__contact-bold +7 495 215-55-96
+
+        .plug-page__contact
+          .plug-page__contact-icon
+            +mail.mail-icon
+          .plug-page__contact-col
+            .plug-page__contact-txt E-mail
+            .plug-page__contact-bold info@bonfuse.ru
+
+        .plug-page__contact
+          .plug-page__contact-icon
+            +placemark.placemark-icon
+          .plug-page__contact-col
+            .plug-page__contact-txt Адрес
+            .plug-page__contact-bold 143360, Московская область, Наро-Фоминский район, г. Апрелевка, #[br] ул. Сентябрьская, д. 10
+
+    .plug-page__img-col
+      //- img.plug-page__big-bg(src="assets/images/plag-big-bg.png", alt="")
+      img.balloon(src="assets/images/balloon.png", alt="")
+    
+    .plug-page__logo
+      img(src="assets/images/logo.png", alt="")

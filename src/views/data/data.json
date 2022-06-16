@@ -3,7 +3,7 @@
 
   "routes": [
     {
-      "href": "/main",
+      "href": "/plug",
       "title": "Заглушка"
     }
   ]
