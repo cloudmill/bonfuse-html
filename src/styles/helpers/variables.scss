@@ -7,6 +7,7 @@ $ff-main: 'Manrope';
 :root {
   --color-white: #fff;
   --color-black: #000;
+  --color-blue: #92C1E9;
 }
 
 // media breakpoints
@@ -46,6 +47,6 @@ $col-part-t: '(#{$col-width-t} + #{$col-gap-m})';
 $col-part-d: '(#{$col-width-d} + #{$col-gap})';
 
 
-$transition: .3s;
-$transition-tz: .6s cubic-bezier(0.83, 0, 0.17, 1);
-$transition-func: cubic-bezier(0.83, 0, 0.17, 1);
+$transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+$transition-time: .6s;
+$transition-func: cubic-bezier(0.33, 1, 0.68, 1);

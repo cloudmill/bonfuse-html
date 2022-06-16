@@ -122,6 +122,8 @@
       border-radius: getRem(40px);
       cursor: pointer;
 
+      transition: $transition;
+
       @include fsl(18px, 130%);
       @media (max-width: $breakpoint-l) {
         @include fsl(16px, 130%);
@@ -133,6 +135,11 @@
       }
       @media (max-width: ($breakpoint-m - 1px)) {
         padding: getRem(12px) getRem(16px);
+      }
+
+      &:hover {
+        border-color: var(--color-blue);
+        background: var(--color-blue);
       }
 
       svg {
@@ -274,6 +281,14 @@
       }
       @media (max-width: ($breakpoint - 1px)) {
         @include fsl(14px, 130%);
+      }
+    }
+
+    a {
+      transition: $transition;
+
+      &:hover {
+        color: var(--color-blue);
       }
     }
   }
