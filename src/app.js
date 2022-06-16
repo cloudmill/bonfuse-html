@@ -15,8 +15,9 @@ window.addEventListener('load', () => {
 
     document.querySelector('.plug-page__top').classList.add('loaded');
     document.querySelector('.plug-page__bottom').classList.add('loaded');
+    document.querySelector('.plug-page__spin').classList.add('start');
 
-  }, 600);
+  }, 400);
 
   setTimeout(() => {
 

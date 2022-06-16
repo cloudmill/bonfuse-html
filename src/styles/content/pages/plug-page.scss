@@ -54,18 +54,44 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: $breakpoint) {
-      background: url(assets/images/plug-info-bg.png) no-repeat center;
-    }
-    @media (max-width: $breakpoint-l) {
-      background-size: getRem(216px);
-    }
+    position: relative;
+
+    // @media (min-width: $breakpoint) {
+    //   background: url(assets/images/plug-info-bg.png) no-repeat center;
+    // }
+    // @media (max-width: $breakpoint-l) {
+    //   background-size: getRem(216px);
+    // }
     @media (max-width: ($breakpoint - 1px)) {
       width: 100%;
       padding: getRem(160px) getRem(40px) getRem(40px) getRem(40px);
     }
     @media (max-width: ($breakpoint-m - 1px)) {
       padding: getRem(160px) getRem(20px) getRem(40px) getRem(20px);
+    }
+  }
+
+  &__bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__spin {
+
+    transition: 1s;
+
+    transform: scale(0);
+
+    &.start {
+      transform: scale(1) rotate(180deg);
     }
   }
 
@@ -138,7 +164,6 @@
       opacity: 0;
 
       transition: transform 1s $transition-func, opacity 1.2s;
-      // transition: 1s;
 
       &.loaded {
         transform: none;
@@ -222,7 +247,6 @@
       opacity: 0;
 
       transition: transform 1s $transition-func, opacity 1.2s;
-      // transition: 1s;
 
       &.loaded {
         transform: none;
