@@ -1,0 +1,17 @@
+extends ../layouts/master
+
+
+
+block header
+block footer
+
+block grid-test
+
+
+
+block content
+  
+  ul
+    each route in data.routes
+      li
+        a(href=route.href)= route.title
