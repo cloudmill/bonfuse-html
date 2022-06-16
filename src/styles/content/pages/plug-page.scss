@@ -1,5 +1,6 @@
 .plug-page {
   width: 100%;
+  overflow: hidden;
 
   display: flex;
   position: relative;
@@ -13,6 +14,7 @@
 
   &__logo {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: calc(50% - #{getRem(112px)});
 
@@ -55,13 +57,8 @@
     justify-content: space-between;
 
     position: relative;
+    overflow: hidden;
 
-    // @media (min-width: $breakpoint) {
-    //   background: url(assets/images/plug-info-bg.png) no-repeat center;
-    // }
-    // @media (max-width: $breakpoint-l) {
-    //   background-size: getRem(216px);
-    // }
     @media (max-width: ($breakpoint - 1px)) {
       width: 100%;
       padding: getRem(160px) getRem(40px) getRem(40px) getRem(40px);
@@ -82,6 +79,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: ($breakpoint - 1px)) {
+      display: none;
+    }
   }
 
   &__spin {
@@ -105,6 +106,8 @@
 
     background: url(assets/images/plag-big-bg.png) no-repeat left;
 
+    overflow: hidden;
+
     @media (max-width: ($breakpoint - 1px)) {
       width: 100%;
       height: getRem(540px);
@@ -126,18 +129,14 @@
       }
 
       &.b1 {
-        @media (min-width: $breakpoint) {
-          animation: loop1 linear 10s infinite;
-        }
+        animation: loop1 linear 10s infinite;
       }
       &.b2 {
         opacity: 0;
 
         &.start {
-          @media (min-width: $breakpoint) {
-            opacity: 1;
-            animation: loop1 linear 10s infinite;
-          }
+          opacity: 1;
+          animation: loop1 linear 10s infinite;
         }
       }
     }
@@ -157,18 +156,18 @@
   }
 
   &__top {
+    position: relative;
+    z-index: 1;
 
-    @media (min-width: $breakpoint) {
-      
-      transform: translateY(-100%);
-      opacity: 0;
+    overflow: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
 
-      transition: transform 1s $transition-func, opacity 1.2s;
+    transition: transform 1s $transition-func, opacity 1.2s;
 
-      &.loaded {
-        transform: none;
-        opacity: 1;
-      }
+    &.loaded {
+      transform: none;
+      opacity: 1;
     }
 
     @media (max-width: ($breakpoint - 1px)) {
@@ -238,21 +237,23 @@
   }
 
   &__bottom {
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-wrap: wrap;
 
-    @media (min-width: $breakpoint) {
-      
-      transform: translateY(100%);
-      opacity: 0;
+    overflow: hidden;
+    transform: translateY(100%);
+    opacity: 0;
 
-      transition: transform 1s $transition-func, opacity 1.2s;
+    transition: transform 1s $transition-func, opacity 1.2s;
 
-      &.loaded {
-        transform: none;
-        opacity: 1;
-      }
+    &.loaded {
+      transform: none;
+      opacity: 1;
     }
+
   }
 
   &__contact {
