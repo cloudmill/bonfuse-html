@@ -1,9 +1,5 @@
 import "./styles/app.scss";
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-
-})
 
 window.addEventListener('load', () => {
 
@@ -19,10 +15,10 @@ window.addEventListener('load', () => {
 
   }, 400);
 
-  setTimeout(() => {
+  // setTimeout(() => {
 
-    document.querySelector('.balloon.b2').classList.add('start');
+  //   document.querySelector('.balloon.b2').classList.add('start');
     
-  }, 5000);
+  // }, 5000);
 
 })

@@ -93,52 +93,65 @@ button {
 }
 
 .no-transition * {
-
   transition: none !important;
-
 }
 
-@keyframes loop1 {
-  0% { 
-    transform: translateY(80vh); 
-    transform-origin: center; 
-  }
-  25% { 
-    transform: translateY(40vh); 
-    transform-origin: center; 
-  }
-  50% {
-    transform: translateY(0); 
-    transform-origin: center; 
-  }
-  75% { 
-    transform: translateY(-40vh); 
-    transform-origin: center; 
-  }
-  100% { 
-    transform: translateY(-80vh); 
-    transform-origin: center; 
+.only-mob {
+  @media (min-width: $breakpoint-s) {
+    display: none !important;
   }
 }
-@keyframes loop2 {
-  0% { 
-    transform: translateY(-80vh); 
-    transform-origin: center; 
+.not-mob {
+  @media (max-width: $breakpoint-s) {
+    display: none !important;
   }
-  25% { 
-    transform: translateY(80vh); 
-    transform-origin: center; 
+}
+
+
+@media (min-width: $breakpoint) {
+  @keyframes loop1 {
+    0% { 
+      transform: translate(10vw, 75vh) rotate(-5deg);
+    }
+    15% {
+      transform: translate(-10vw, 50vh) rotate(5deg);
+    }
+    30% { 
+      transform: translate(10vw, 30vh) rotate(-5deg);
+    }
+    45% { 
+      transform: translate(-10vw, 10vh) rotate(5deg);
+    }
+    60% {
+      transform: translate(10vw, -10vh) rotate(-5deg);
+    }
+    75% { 
+      transform: translate(-10vw, -30vh) rotate(5deg);
+    }
+    90% {
+      transform: translate(10vw, -50vh) rotate(-5deg);
+    }
+    100% { 
+      transform: translate(-10vw, -75vh) rotate(5deg);
+    }
   }
-  50% {
-    transform: translateY(40vh); 
-    transform-origin: center; 
-  }
-  75% { 
-    transform: translateY(0); 
-    transform-origin: center; 
-  }
-  100% { 
-    transform: translateY(-40vh); 
-    transform-origin: center; 
+}
+@media (max-width: ($breakpoint - 1px)) {
+  @keyframes loop2 {
+    0% {
+      transform: translate(10vw, 150%) rotate(-5deg);
+    }
+    25% {
+      transform: translate(-10vw, 75%) rotate(5deg);
+    }
+    50% {
+      transform: translate(10vw, 0) rotate(-5deg);
+    }
+    75% {
+      transform: translate(-10vw, -75%) rotate(5deg);
+    }
+    100% {
+      transform: translate(10vw, -150%) rotate(-5deg);
+    }
   }
 }
