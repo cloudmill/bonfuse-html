@@ -263,6 +263,10 @@
 
     transition: transform 1s $transition-func, opacity 1.2s;
 
+    @media (max-width: ($breakpoint-s - 1px)) {
+      flex-direction: column;
+    }
+
     &.loaded {
       transform: none;
       opacity: 1;
